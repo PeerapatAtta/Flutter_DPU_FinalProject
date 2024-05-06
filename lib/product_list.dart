@@ -66,7 +66,7 @@ class _ProductListState extends State<ProductList> {
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: color1,
-        title: Text('Food'),
+        title: Text('Menu'),
         shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
         //shape: Border(bottom: BorderSide(color: color1, width: 2)),
       ),
@@ -87,7 +87,7 @@ class _ProductListState extends State<ProductList> {
                     backgroundColor: color1,
                   ),
                   child: Text(
-                    'Add Food',
+                    'Add Menu',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

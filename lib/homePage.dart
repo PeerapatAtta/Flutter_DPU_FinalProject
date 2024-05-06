@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_aboutme/login.dart';
+import 'package:my_aboutme/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,9 +20,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        //backgroundColor: color1,
         title: Text('Home Page'),
         automaticallyImplyLeading: false,
+        shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -34,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ListTile(
                     leading: Icon(Icons.album),
-                    title: Text('Welcome to my about me'),
+                    title: Text('Welcome to Good Day Coffee'),
                     subtitle: Text('WE679'),
                   ),
                   Row(
@@ -61,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Container(
                     padding: EdgeInsets.all(0),
-                    color: Color.fromRGBO(114, 165, 246, 1),
+                    color: color2,
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, 'profile');
@@ -87,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0),
-                    color: Color.fromRGBO(114, 165, 246, 1),
+                    color: color2,
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, 'video_presentation');
@@ -114,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0),
-                    color: Color.fromRGBO(114, 165, 246, 1),
+                    color: color2,
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, 'my_map');
@@ -128,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 80),
                             Center(
                               child: Text(
-                                'Map',
+                                'Cart',
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -140,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0),
-                    color: Color.fromRGBO(114, 165, 246, 1),
+                    color: color2,
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, 'my_age');
@@ -166,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0),
-                    color: Color.fromRGBO(114, 165, 246, 1),
+                    color: color2,
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, 'blog');
@@ -181,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 80),
                             Center(
                               child: Text(
-                                'Blog',
+                                'Setting',
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -193,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0),
-                    color: Color.fromRGBO(114, 165, 246, 1),
+                    color: color2,
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, 'product');
@@ -202,12 +204,12 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image(
-                                image: AssetImage('assets/images/products.png'),
+                                image: AssetImage('assets/images/coffee.png'),
                                 height: 80,
                                 width: 80),
                             Center(
                               child: Text(
-                                'Product',
+                                'Menu',
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,

@@ -55,7 +55,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text('Add Food'),
+          title: Text('Add Menu'),
         ),
         body: SingleChildScrollView(
           child: Column(
