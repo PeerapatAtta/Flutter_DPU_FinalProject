@@ -11,12 +11,12 @@ class ProductUpdate extends StatefulWidget {
 
 class _ProductUpdateState extends State<ProductUpdate> {
   final dio = Dio();
-  final baseApi = "https://testpos.trainingzenter.com/lab_dpu/product/update/";
+  final baseApi = "https://testpos.trainingzenter.com/lab_dpu/food/update/";
   final productName = TextEditingController();
   final productCover = TextEditingController();
   final productDescription = TextEditingController();
   final productPrice = TextEditingController();
-  late String productOwner = "66130151";
+  late String productOwner = "66130151_66130413";
   late String msg = "";
 
   @override
@@ -39,11 +39,11 @@ class _ProductUpdateState extends State<ProductUpdate> {
                 if (response.statusCode == 200)
                   {
                     setState(() {
-                      productName.text = response.data['product_name']!;
-                      productCover.text = response.data['product_cover']!;
+                      productName.text = response.data['food_name']!;
+                      productCover.text = response.data['food_cover']!;
                       productDescription.text =
-                          response.data['product_description']!;
-                      productPrice.text = response.data['product_price']!;
+                          response.data['food_description']!;
+                      productPrice.text = response.data['food_price']!;
                     })
                   }
               });
@@ -58,7 +58,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
         productDescription.text == '' ||
         productPrice.text == '') {
       setState(() {
-        msg = "Please add all product data";
+        msg = "Please add all food data";
       });
       return false;
     }
@@ -66,11 +66,11 @@ class _ProductUpdateState extends State<ProductUpdate> {
       await dio
           .put(baseApi + widget.productId,
               data: {
-                "product_name": productName.text,
-                "product_cover": productCover.text,
-                "product_description": productDescription.text,
-                "product_price": productPrice.text,
-                "product_owner": productOwner
+                "food_name": productName.text,
+                "food_cover": productCover.text,
+                "food_description": productDescription.text,
+                "food_price": productPrice.text,
+                "food_owner": productOwner
               },
               options: Options(
                 headers: {
@@ -91,7 +91,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text('Product Update'),
+          title: Text('Food Update'),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -109,7 +109,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
                 child: TextField(
                   controller: productName,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Product Name"),
+                      border: OutlineInputBorder(), labelText: "Food Name"),
                 ),
               ),
               Padding(
@@ -117,7 +117,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
                 child: TextField(
                   controller: productCover,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Product Cover"),
+                      border: OutlineInputBorder(), labelText: "Food Cover"),
                 ),
               ),
               Padding(
@@ -126,7 +126,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
                   controller: productDescription,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: "Product Description"),
+                      labelText: "Food Description"),
                 ),
               ),
               Padding(
@@ -134,7 +134,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
                 child: TextField(
                   controller: productPrice,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Product Price"),
+                      border: OutlineInputBorder(), labelText: "Food Price"),
                 ),
               ),
               TextButton(

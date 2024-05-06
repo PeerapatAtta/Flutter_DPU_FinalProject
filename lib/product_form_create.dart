@@ -10,12 +10,12 @@ class ProductFromCreate extends StatefulWidget {
 
 class _ProductFromCreateState extends State<ProductFromCreate> {
   final dio = Dio();
-  final baseApi = "https://testpos.trainingzenter.com/lab_dpu/product/create/";
+  final baseApi = "https://testpos.trainingzenter.com/lab_dpu/food/create/";
   final productName = TextEditingController();
   final productCover = TextEditingController();
   final productDescription = TextEditingController();
   final productPrice = TextEditingController();
-  late String productOwner = "66130151";
+  late String productOwner = "66130151_66130413";
   late String msg = "";
 
   Future<dynamic> ProductCreate() async {
@@ -24,7 +24,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
         productDescription.text == '' ||
         productPrice.text == '') {
       setState(() {
-        msg = "Please add all product data";
+        msg = "Please add all food data";
       });
       return false;
     }
@@ -32,11 +32,11 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
       await dio
           .post(baseApi,
               data: {
-                "product_name": productName.text,
-                "product_cover": productCover.text,
-                "product_description": productDescription.text,
-                "product_price": productPrice.text,
-                "product_owner": productOwner
+                "food_name": productName.text,
+                "food_cover": productCover.text,
+                "food_description": productDescription.text,
+                "food_price": productPrice.text,
+                "food_owner": productOwner
               },
               options: Options(
                 headers: {
@@ -55,7 +55,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text('Add Product'),
+          title: Text('Add Food'),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -73,7 +73,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
                 child: TextField(
                   controller: productName,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Product Name"),
+                      border: OutlineInputBorder(), labelText: "Food Name"),
                 ),
               ),
               Padding(
@@ -81,7 +81,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
                 child: TextField(
                   controller: productCover,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Product Cover"),
+                      border: OutlineInputBorder(), labelText: "Food Cover"),
                 ),
               ),
               Padding(
@@ -90,7 +90,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
                   controller: productDescription,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: "Product Description"),
+                      labelText: "Food Description"),
                 ),
               ),
               Padding(
@@ -98,7 +98,7 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
                 child: TextField(
                   controller: productPrice,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Product Price"),
+                      border: OutlineInputBorder(), labelText: "Food Price"),
                 ),
               ),
               TextButton(

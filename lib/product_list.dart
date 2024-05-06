@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/main.dart';
 import 'package:my_aboutme/product_form_create.dart';
 import 'package:my_aboutme/product_update.dart';
 
@@ -12,9 +13,9 @@ class ProductList extends StatefulWidget {
 
 class _ProductListState extends State<ProductList> {
   final dio = Dio();
-  final baseApi =
-      "https://testpos.trainingzenter.com/lab_dpu/product/";
+  final baseApi = "https://testpos.trainingzenter.com/lab_dpu/food/";
   late List productList = [];
+  //Color color1 = const Color.fromARGB(255, 29, 117, 32);
 
   @override
   void initState() {
@@ -25,7 +26,7 @@ class _ProductListState extends State<ProductList> {
   Future<void> getProduct() async {
     try {
       await dio
-          .get("${baseApi}/list/66130151?format=json",
+          .get("${baseApi}/list/66130151_66130413?format=json",
               options: Options(
                 headers: {
                   'Content-Type': 'application/json',
@@ -55,10 +56,8 @@ class _ProductListState extends State<ProductList> {
                   'Accept': 'application/json',
                 },
               ))
-          .then((response) => {Navigator.pop(context,'Cancle'),getProduct()
-              });
-    } catch (e) {
-    }
+          .then((response) => {Navigator.pop(context, 'Cancle'), getProduct()});
+    } catch (e) {}
   }
 
   @override
@@ -66,8 +65,10 @@ class _ProductListState extends State<ProductList> {
     print(productList);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Product'),
+        //backgroundColor: color1,
+        title: Text('Food'),
+        shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
+        //shape: Border(bottom: BorderSide(color: color1, width: 2)),
       ),
       body: Column(
         children: [
@@ -83,10 +84,10 @@ class _ProductListState extends State<ProductList> {
                             builder: (context) => ProductFromCreate()));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 9, 210, 19),
+                    backgroundColor: color1,
                   ),
                   child: Text(
-                    'Add Product',
+                    'Add Food',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -101,12 +102,12 @@ class _ProductListState extends State<ProductList> {
                   color: Colors.white,
                   child: Column(
                     children: [
-                      Image.network(productList[index]["product_cover"]),
+                      Image.network(productList[index]["food_cover"]),
                       ListTile(
                         leading: Icon(Icons.arrow_drop_down_circle),
-                        title: Text(productList[index]["product_name"]),
+                        title: Text(productList[index]["food_name"]),
                         subtitle: Text(
-                            'Price: ${productList[index]["product_price"]} THB'),
+                            'Price: ${productList[index]["food_price"]} THB'),
                       ),
                       Padding(
                           padding: EdgeInsets.all(8.0),
@@ -121,24 +122,23 @@ class _ProductListState extends State<ProductList> {
                               builder: (BuildContext context) => AlertDialog(
                                 title: Text("Delete Data"),
                                 content: Text(
-                                    "Delete ${productList[index]["product_name"]}"),
+                                    "Delete ${productList[index]["food_name"]}"),
                                 actions: <Widget>[
                                   TextButton(
                                       onPressed: () =>
                                           Navigator.pop(context, 'Cancle'),
-                                      child: Text("Close")),
+                                      child: Text("Cancle")),
                                   TextButton(
                                       onPressed: () => {
-                                        productDelete(productList[index]["product_id"])
-
-                                      },
+                                            productDelete(
+                                                productList[index]["food_id"])
+                                          },
                                       child: Text("OK")),
-
                                 ],
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 255, 0, 0),
+                              backgroundColor: color1,
                             ),
                             child: Text(
                               'Delete',
@@ -152,12 +152,12 @@ class _ProductListState extends State<ProductList> {
                                   MaterialPageRoute(
                                       builder: (context) => ProductUpdate(
                                             productId: productList[index]
-                                                    ["product_id"]
+                                                    ["food_id"]
                                                 .toString(),
                                           )));
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(25, 177, 252, 1),
+                              backgroundColor: color1,
                             ),
                             child: Text(
                               'Update',
@@ -171,18 +171,18 @@ class _ProductListState extends State<ProductList> {
                                   MaterialPageRoute(
                                       builder: (context) => ProductDetail(
                                             productName: productList[index]
-                                                ["product_name"],
+                                                ["food_name"],
                                             productCover: productList[index]
-                                                ["product_cover"],
+                                                ["food_cover"],
                                             productDescription:
                                                 productList[index]
-                                                    ["product_description"],
+                                                    ["food_description"],
                                             productPrice: productList[index]
-                                                ["product_price"],
+                                                ["food_price"],
                                           )));
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(25, 177, 252, 1),
+                              backgroundColor: color1,
                             ),
                             child: Text(
                               'More Detail',

@@ -1,12 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:my_aboutme/blog.dart';
 import 'package:my_aboutme/homePage.dart';
 import 'package:my_aboutme/login.dart';
 import 'package:my_aboutme/myAge.dart';
 import 'package:my_aboutme/myMap.dart';
-// import 'package:my_aboutme/myProduct.dart';
 import 'package:my_aboutme/product_list.dart';
 import 'package:my_aboutme/profile.dart';
 import 'package:my_aboutme/videoPresentation.dart';
@@ -15,6 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   runApp(const MyApp());
 }
+
+Color color1 = const Color.fromARGB(255, 29, 117, 32);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
