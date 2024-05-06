@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_aboutme/homePage.dart';
+import 'package:my_aboutme/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
@@ -21,8 +22,7 @@ class _LoginState extends State<Login> {
       });
     }
 
-    if (usernameController.text == 'harry' &&
-        passwordController.text == '12345') {
+    if (usernameController.text == 'off' && passwordController.text == '1234') {
       setPreferences(1);
     } else {
       setState(() {
@@ -60,7 +60,10 @@ class _LoginState extends State<Login> {
               ),
               Text(
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  'My About Me App'),
+                  'Good Day Coffee'),
+              SizedBox(
+                height: 25,
+              ),
               if (msg != "")
                 Padding(
                   padding: EdgeInsets.all(8.0),
@@ -121,8 +124,7 @@ class _LoginState extends State<Login> {
                 padding: const EdgeInsets.all(15.0),
                 child: ElevatedButton(
                     onPressed: signIn,
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(25, 177, 252, 1)),
+                    style: ElevatedButton.styleFrom(backgroundColor: color1),
                     child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(10.0),

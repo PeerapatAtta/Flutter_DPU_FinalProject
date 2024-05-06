@@ -72,118 +72,12 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image(
-                                image: AssetImage('assets/images/user.png'),
+                                image: AssetImage('assets/images/man.png'),
                                 height: 80,
                                 width: 80),
                             Center(
                               child: Text(
                                 'Profile',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(0),
-                    color: color2,
-                    child: TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'video_presentation');
-                        },
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image(
-                                image:
-                                    AssetImage('assets/images/multimedia.png'),
-                                height: 80,
-                                width: 80),
-                            Center(
-                              child: Text(
-                                'Video Presentation',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(0),
-                    color: color2,
-                    child: TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'my_map');
-                        },
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image(
-                                image: AssetImage('assets/images/map.png'),
-                                height: 80,
-                                width: 80),
-                            Center(
-                              child: Text(
-                                'Cart',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(0),
-                    color: color2,
-                    child: TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'my_age');
-                        },
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image(
-                                image: AssetImage('assets/images/schedule.png'),
-                                height: 80,
-                                width: 80),
-                            Center(
-                              child: Text(
-                                'My Age',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(0),
-                    color: color2,
-                    child: TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'blog');
-                        },
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image(
-                                image:
-                                    AssetImage('assets/images/portfolio.png'),
-                                height: 80,
-                                width: 80),
-                            Center(
-                              child: Text(
-                                'Setting',
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -210,6 +104,58 @@ class _HomePageState extends State<HomePage> {
                             Center(
                               child: Text(
                                 'Menu',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(0),
+                    color: color2,
+                    child: TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'my_map');
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image(
+                                image: AssetImage('assets/images/cart.png'),
+                                height: 80,
+                                width: 80),
+                            Center(
+                              child: Text(
+                                'Cart',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(0),
+                    color: color2,
+                    child: TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'setting');
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image(
+                                image: AssetImage('assets/images/gear.png'),
+                                height: 80,
+                                width: 80),
+                            Center(
+                              child: Text(
+                                'Setting',
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
