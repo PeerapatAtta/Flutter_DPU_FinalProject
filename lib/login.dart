@@ -48,16 +48,17 @@ class _LoginState extends State<Login> {
         child: Center(
           child: Column(
             children: <Widget>[
+              SizedBox(height: 20,),
               Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Image(
-                    image: AssetImage('assets/images/user.png'),
-                    width: 100,
-                    height: 100,
+                    image: AssetImage('assets/images/logo.png'),
+                    width: 200,
+                    height: 200,
                   )),
-              SizedBox(
-                height: 25,
-              ),
+              // SizedBox(
+              //   height: 10,
+              // ),
               Text(
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   'Good Day Coffee'),

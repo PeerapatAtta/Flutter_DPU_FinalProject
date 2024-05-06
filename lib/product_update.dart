@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/main.dart';
 
 class ProductUpdate extends StatefulWidget {
   const ProductUpdate({super.key, required this.productId});
@@ -90,7 +91,7 @@ class _ProductUpdateState extends State<ProductUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: color2,
           title: Text('Food Update'),
         ),
         body: SingleChildScrollView(

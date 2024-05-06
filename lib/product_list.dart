@@ -65,10 +65,9 @@ class _ProductListState extends State<ProductList> {
     print(productList);
     return Scaffold(
       appBar: AppBar(
-        //backgroundColor: color1,
+        backgroundColor: color2,
         title: Text('Menu'),
         shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
-        //shape: Border(bottom: BorderSide(color: color1, width: 2)),
       ),
       body: Column(
         children: [
@@ -225,7 +224,7 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: color2,
           title: Text(widget.productName),
         ),
         body: SingleChildScrollView(

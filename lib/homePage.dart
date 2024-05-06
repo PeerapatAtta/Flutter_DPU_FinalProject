@@ -75,6 +75,9 @@ class _HomePageState extends State<HomePage> {
                                 image: AssetImage('assets/images/man.png'),
                                 height: 80,
                                 width: 80),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Center(
                               child: Text(
                                 'Profile',
@@ -101,6 +104,9 @@ class _HomePageState extends State<HomePage> {
                                 image: AssetImage('assets/images/coffee.png'),
                                 height: 80,
                                 width: 80),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Center(
                               child: Text(
                                 'Menu',
@@ -127,6 +133,9 @@ class _HomePageState extends State<HomePage> {
                                 image: AssetImage('assets/images/cart.png'),
                                 height: 80,
                                 width: 80),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Center(
                               child: Text(
                                 'Cart',
@@ -153,6 +162,9 @@ class _HomePageState extends State<HomePage> {
                                 image: AssetImage('assets/images/gear.png'),
                                 height: 80,
                                 width: 80),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Center(
                               child: Text(
                                 'Setting',

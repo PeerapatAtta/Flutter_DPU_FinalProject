@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/main.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -12,9 +13,9 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //backgroundColor: color1,
         title: Text('Setting'),
         shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
+        backgroundColor: color2,
       ),
       body: Center(
         child: Column(

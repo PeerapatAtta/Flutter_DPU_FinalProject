@@ -12,8 +12,10 @@ void main() {
   runApp(const MyApp());
 }
 
-Color color1 = const Color.fromARGB(255, 29, 117, 32);
-Color color2 = Color.fromARGB(255, 119, 179, 122);
+// Color color1 = const Color.fromARGB(255, 29, 117, 32);
+Color color1 = const Color.fromARGB(255, 6, 118, 85);
+// Color color2 = Color.fromARGB(255, 119, 179, 122);
+Color color2 = Color.fromARGB(255, 6, 118, 85);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/main.dart';
 
 class ProductFromCreate extends StatefulWidget {
   const ProductFromCreate({super.key});
@@ -54,8 +55,9 @@ class _ProductFromCreateState extends State<ProductFromCreate> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text('Add Menu'),
+          backgroundColor: color2,
+          shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
         ),
         body: SingleChildScrollView(
           child: Column(
