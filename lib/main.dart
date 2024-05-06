@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:my_aboutme/cart.dart';
 import 'package:my_aboutme/homePage.dart';
 import 'package:my_aboutme/login.dart';
-import 'package:my_aboutme/myAge.dart';
 import 'package:my_aboutme/product_list.dart';
 import 'package:my_aboutme/profile.dart';
 import 'package:my_aboutme/setting.dart';
-import 'package:my_aboutme/videoPresentation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -27,8 +25,6 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'My About me'),
       routes: <String, WidgetBuilder>{
         'profile': (BuildContext context) => Profile(),
-        'video_presentation': (BuildContext context) => VideoPresentation(),
-        'my_age': (BuildContext context) => MyAge(),
         'product': (BuildContext context) => ProductList(),
         'cart': (BuildContext context) => CartPage(),
         'setting': (BuildContext context) => SettingPage(),

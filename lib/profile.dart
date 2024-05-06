@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/main.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -7,8 +8,9 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text('Profile'),
+          shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
+          backgroundColor: color2,
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -21,44 +23,42 @@ class Profile extends StatelessWidget {
                     height: 15,
                   ),
                   Image(
-                    image: AssetImage('assets/images/user.png'),
-                    height: 100,
-                    width: 100,
+                    image: AssetImage('assets/images/tiger.png'),
+                    height: 150,
+                    width: 150,
                   ),
                   SizedBox(
                     height: 15,
                   ),
                   Text(
-                    'Peerapat Atta',
+                    'Good Day Coffee Team',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    'Full-Stack Developer',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
                   SizedBox(
                     height: 15,
                   ),
                   ListTile(
-                    leading: Icon(Icons.phone),
+                    leading: Icon(Icons.school),
                     title: Text(
-                      'Phone',
+                      'WE679',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    subtitle: Text('087-697-6306'),
+                    subtitle: Text(
+                        'Special Topics in Technology of Mobile Application Development'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.group),
+                    title: Text(
+                      'Member',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                        '66130151 Peerapat Atta\n66130413 Sorasak Charoenkittisak'),
                   ),
                   SizedBox(
                     height: 15,
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.email),
-                    title: Text(
-                      'Email',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text('peerapatatta@gmail.com'),
                   ),
                 ],
               ),

@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //backgroundColor: color1,
+        backgroundColor: color2,
         title: Text('Home Page'),
         automaticallyImplyLeading: false,
         shape: Border(bottom: BorderSide(color: Colors.grey[400]!, width: 2)),
