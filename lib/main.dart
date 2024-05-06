@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/cart.dart';
 import 'package:my_aboutme/homePage.dart';
 import 'package:my_aboutme/login.dart';
 import 'package:my_aboutme/myAge.dart';
-import 'package:my_aboutme/myMap.dart';
 import 'package:my_aboutme/product_list.dart';
 import 'package:my_aboutme/profile.dart';
 import 'package:my_aboutme/setting.dart';
@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         'profile': (BuildContext context) => Profile(),
         'video_presentation': (BuildContext context) => VideoPresentation(),
-        'my_map': (BuildContext context) => MyMap(),
         'my_age': (BuildContext context) => MyAge(),
         'product': (BuildContext context) => ProductList(),
+        'cart': (BuildContext context) => CartPage(),
         'setting': (BuildContext context) => SettingPage(),
       },
     );

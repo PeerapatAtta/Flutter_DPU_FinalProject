@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                     color: color2,
                     child: TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'my_map');
+                          Navigator.pushNamed(context, 'cart');
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
