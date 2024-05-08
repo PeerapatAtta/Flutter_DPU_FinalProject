@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_aboutme/cart.dart';
 import 'package:my_aboutme/login.dart';
 import 'package:my_aboutme/main.dart';
+import 'package:my_aboutme/product_list.dart';
+import 'package:my_aboutme/setting.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,6 +18,10 @@ class _HomePageState extends State<HomePage> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.clear();
   }
+
+  int _navBarIndex = 0;
+
+  var pages = <Widget>[HomePage(), ProductList(), CartPage(), SettingPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -183,6 +190,39 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: color1,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+        currentIndex: _navBarIndex,
+        items: bottomNavItems(),
+        onTap: (index) => setState(() {
+          _navBarIndex = index;
+        }),
+      ),
     );
+  }
+
+  List<BottomNavigationBarItem> bottomNavItems() {
+    var itemIcons = [
+      Icons.home,
+      Icons.coffee,
+      Icons.shopping_cart,
+      Icons.menu,
+    ];
+    var itemLabels = [
+      'Home',
+      'Menu',
+      'Cart',
+      'Setting',
+    ];
+
+    return List.generate(
+        itemIcons.length,
+        (index) => BottomNavigationBarItem(
+              icon: Icon(itemIcons[index]),
+              label: itemLabels[index],
+            ));
   }
 }
