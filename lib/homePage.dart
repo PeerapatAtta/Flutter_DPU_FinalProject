@@ -19,9 +19,7 @@ class _HomePageState extends State<HomePage> {
     await prefs.clear();
   }
 
-  int _navBarIndex = 0;
-
-  var pages = <Widget>[HomePage(), ProductList(), CartPage(), SettingPage()];
+   var pages = <Widget>[HomePage(), ProductList(), CartPage(), SettingPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -195,11 +193,9 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: color1,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.white,
-        currentIndex: _navBarIndex,
+        currentIndex: 0,
         items: bottomNavItems(),
-        onTap: (index) => setState(() {
-          _navBarIndex = index;
-        }),
+        onTap: (index) => (),
       ),
     );
   }

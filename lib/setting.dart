@@ -46,7 +46,38 @@ class _SettingPageState extends State<SettingPage> {
           endIndent: 10,
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: color1,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+        currentIndex: 3,
+        items: bottomNavItems(),
+        onTap: (index) => (),
+      ),
     );
+  }
+
+  List<BottomNavigationBarItem> bottomNavItems() {
+    var itemIcons = [
+      Icons.home,
+      Icons.coffee,
+      Icons.shopping_cart,
+      Icons.menu,
+    ];
+    var itemLabels = [
+      'Home',
+      'Menu',
+      'Cart',
+      'Setting',
+    ];
+
+    return List.generate(
+        itemIcons.length,
+        (index) => BottomNavigationBarItem(
+              icon: Icon(itemIcons[index]),
+              label: itemLabels[index],
+            ));
   }
 
   Widget buildListItem(BuildContext ctx, int index) => ListTile(
