@@ -33,14 +33,16 @@ class _ProductListState extends State<ProductList> {
                   'Accept': 'application/json',
                 },
               ))
-          .then((response) => {
-                if (response.statusCode == 200)
-                  {
-                    setState(() {
-                      productList = response.data!;
-                    })
-                  }
-              });
+          .then((response) {
+        if (response.statusCode == 200) {
+          if (mounted) {
+            // เช็คว่า Widget ยังคง mounted อยู่หรือไม่
+            setState(() {
+              productList = response.data!;
+            });
+          }
+        }
+      });
     } catch (e) {
       if (!context.mounted) return;
     }
